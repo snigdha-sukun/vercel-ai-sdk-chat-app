@@ -49,7 +49,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/snigdha-sukun/vercel-ai-sdk-chat-app)
-- Live Site URL: [Vercel](#author)
+- Live Site URL: [Vercel](https://vercel-ai-sdk-chat-app-wb51.vercel.app/)
 
 ## My process
 
