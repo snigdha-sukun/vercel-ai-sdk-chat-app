@@ -3,38 +3,52 @@ import type { Components } from "react-markdown";
 // Define markdown components to be used with ReactMarkdown
 export const markdownComponents: Components = {
 	h1: ({ children }) => (
-		<h1 className="text-lg sm:text-xl font-bold mb-2 mt-0">{children}</h1>
+		<h1 className="text-lg sm:text-xl font-bold mb-2 mt-3 text-gray-800 dark:text-gray-100">
+			{children}
+		</h1>
 	),
 	h2: ({ children }) => (
-		<h2 className="text-base sm:text-lg font-bold mb-2 mt-0">{children}</h2>
+		<h2 className="text-base sm:text-lg font-bold mb-2 mt-3 text-gray-800 dark:text-gray-100">
+			{children}
+		</h2>
 	),
 	h3: ({ children }) => (
-		<h3 className="text-sm sm:text-base font-bold mb-1 mt-0">{children}</h3>
+		<h3 className="text-sm sm:text-base font-bold mb-1 mt-2 text-gray-800 dark:text-gray-100">
+			{children}
+		</h3>
 	),
-	p: ({ children }) => <p className="mb-2 mt-0 last:mb-0">{children}</p>,
+	p: ({ children }) => (
+		<p className="mb-2 mt-0 last:mb-0 text-gray-700 dark:text-gray-300">
+			{children}
+		</p>
+	),
 	ul: ({ children }) => (
-		<ul className="list-disc pl-4 mb-2 mt-0">{children}</ul>
+		<ul className="list-disc pl-4 mb-2 mt-0 text-gray-700 dark:text-gray-300">
+			{children}
+		</ul>
 	),
 	ol: ({ children }) => (
-		<ol className="list-decimal pl-4 mb-2 mt-0">{children}</ol>
+		<ol className="list-decimal pl-4 mb-2 mt-0 text-gray-700 dark:text-gray-300">
+			{children}
+		</ol>
 	),
-	li: ({ children }) => <li className="mb-1 last:mb-0">{children}</li>,
+	li: ({ children }) => (
+		<li className="mb-1 last:mb-0 text-gray-700 dark:text-gray-300">
+			{children}
+		</li>
+	),
 	a: ({ href, children }) => (
 		<a
 			href={href}
 			target="_blank"
 			rel="noreferrer"
-			className="text-blue-600 dark:text-blue-400 hover:underline"
+			className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
 		>
 			{children}
 		</a>
 	),
-	// Fixed code component to use proper typing for react-markdown
 	code: (props) => {
 		const { children } = props;
-
-		// React-markdown already handles inline vs block code
-		// We'll use a simplified approach that doesn't rely on node.parent
 		const match = /language-(\w+)/.exec(props.className ?? "");
 		const language = match?.[1] ?? "";
 
@@ -57,7 +71,7 @@ export const markdownComponents: Components = {
 		);
 	},
 	blockquote: ({ children }) => (
-		<blockquote className="border-l-2 border-gray-400 dark:border-gray-500 pl-2 italic my-2">
+		<blockquote className="border-l-2 border-gray-400 dark:border-gray-500 pl-2 italic my-2 text-gray-700 dark:text-gray-300">
 			{children}
 		</blockquote>
 	),
@@ -90,4 +104,5 @@ export const markdownComponents: Components = {
 			{children}
 		</td>
 	),
+	hr: () => <hr className="my-4 border-gray-200 dark:border-gray-700" />,
 };

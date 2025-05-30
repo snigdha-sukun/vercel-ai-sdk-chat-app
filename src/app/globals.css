@@ -12,12 +12,6 @@
   --foreground: #ededed;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-roboto);
-}
-
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     --background: #0a0a0a;
@@ -28,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  @apply font-sans;
+  @apply font-sans antialiased;
 }
 
 /* Add smooth transition for theme changes */
@@ -39,4 +33,45 @@ html {
 /* Ensure the background extends fully */
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  /* Ensure proper heading and text styles */
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-bold;
+  }
+  h3 {
+    @apply text-lg font-bold;
+  }
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+  
+  /* Add proper focus outlines for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-blue-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+}
+
+/* Fix prose styling for markdown content */
+.prose pre {
+  @apply bg-gray-100 dark:bg-gray-800 rounded-md p-3;
+}
+
+.prose code {
+  @apply text-sm bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded;
 }

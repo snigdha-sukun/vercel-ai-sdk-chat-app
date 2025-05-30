@@ -4,9 +4,10 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const roboto = Roboto({
-	weight: ["400", "700"],
+	weight: ["400", "500", "700"],
 	subsets: ["latin"],
 	variable: "--font-roboto",
+	display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,8 +22,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${roboto.variable} font-sans antialiased`}>
+		<html lang="en" suppressHydrationWarning>
+			<body className={`${roboto.variable} font-sans antialiased min-h-screen`}>
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>

@@ -14,7 +14,14 @@ export function SunIcon({
 			aria-labelledby="sunIconTitle"
 		>
 			<title id="sunIconTitle">{title || "Sun Icon"}</title>
-			<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+			<circle cx="12" cy="12" r="4" fill="currentColor" />
+			<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="2"
+				stroke="currentColor"
+				d="M12 3v2M12 19v2M3 12h2M19 12h2M5.636 5.636l1.414 1.414M16.95 16.95l1.414 1.414M5.636 18.364l1.414-1.414M16.95 7.05l1.414-1.414"
+			/>
 		</svg>
 	);
 }
