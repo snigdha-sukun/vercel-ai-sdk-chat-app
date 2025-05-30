@@ -291,7 +291,6 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
 
 Future enhancements for this project could include:
 
-- Adding theme options
 - Supporting different AI models
 - Implementing code syntax highlighting
 - Adding user authentication
