@@ -18,7 +18,7 @@ export default {
 			fontFamily: {
 				sans: ["var(--font-roboto)", "sans-serif"],
 			},
-			typography: (theme) => ({
+			typography: (theme: (path: string) => string) => ({
 				DEFAULT: {
 					css: {
 						color: theme("colors.gray.800"),
