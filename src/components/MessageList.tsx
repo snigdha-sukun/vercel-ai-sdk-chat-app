@@ -9,7 +9,7 @@ interface MessageListProps {
 
 export default function MessageList({ messages, data }: MessageListProps) {
 	return (
-		<div className="h-[400px] sm:h-[500px] lg:h-[600px] overflow-y-auto p-3 sm:p-6 space-y-3 sm:space-y-4">
+		<div className="h-[400px] sm:h-[500px] lg:h-[600px] overflow-y-auto p-3 sm:p-6 space-y-3 sm:space-y-4 bg-white dark:bg-gray-800">
 			{messages.length === 0 ? (
 				<EmptyState />
 			) : (
@@ -19,11 +19,11 @@ export default function MessageList({ messages, data }: MessageListProps) {
 			)}
 
 			{data && (
-				<div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 sm:p-4">
-					<h4 className="font-semibold text-yellow-800 mb-2 text-sm sm:text-base">
+				<div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-3 sm:p-4">
+					<h4 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-2 text-sm sm:text-base">
 						Debug Data:
 					</h4>
-					<pre className="text-xs text-yellow-700 overflow-x-auto">
+					<pre className="text-xs text-yellow-700 dark:text-yellow-200 overflow-x-auto">
 						{JSON.stringify(data, null, 2)}
 					</pre>
 				</div>

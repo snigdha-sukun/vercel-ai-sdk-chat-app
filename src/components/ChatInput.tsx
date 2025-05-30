@@ -13,14 +13,14 @@ export default function ChatInput({
 	handleSubmit,
 }: ChatInputProps) {
 	return (
-		<div className="border-t border-gray-200 p-3 sm:p-6 bg-gray-50">
+		<div className="border-t border-gray-200 dark:border-gray-700 p-3 sm:p-6 bg-gray-50 dark:bg-gray-800">
 			<form
 				onSubmit={handleSubmit}
 				className="flex items-center space-x-2 sm:space-x-4"
 			>
 				<div className="flex-1 relative">
 					<input
-						className="w-full px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm transition-all duration-200 text-sm sm:text-base"
+						className="w-full px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm transition-all duration-200 text-sm sm:text-base bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
 						value={input}
 						placeholder="Type your message..."
 						onChange={handleInputChange}
@@ -34,10 +34,10 @@ export default function ChatInput({
 					</button>
 				</div>
 			</form>
-			<p className="text-xs text-gray-500 mt-2 text-center hidden sm:block">
+			<p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center hidden sm:block">
 				Press Enter to send • AI responses are generated in real-time
 			</p>
-			<p className="text-xs text-gray-500 mt-2 text-center sm:hidden">
+			<p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center sm:hidden">
 				Tap to send
 			</p>
 		</div>

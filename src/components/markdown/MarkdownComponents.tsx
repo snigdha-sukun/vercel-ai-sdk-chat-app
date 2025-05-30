@@ -23,38 +23,44 @@ export const markdownComponents: Components = {
 	),
 	table: ({ children }) => (
 		<div className="overflow-x-auto mb-4">
-			<table className="min-w-full border-collapse border border-gray-300">
+			<table className="min-w-full border-collapse border border-gray-300 dark:border-gray-600">
 				{children}
 			</table>
 		</div>
 	),
-	thead: ({ children }) => <thead className="bg-gray-100">{children}</thead>,
+	thead: ({ children }) => (
+		<thead className="bg-gray-100 dark:bg-gray-700">{children}</thead>
+	),
 	tbody: ({ children }) => <tbody>{children}</tbody>,
 	tr: ({ children }) => (
-		<tr className="border-b border-gray-200">{children}</tr>
+		<tr className="border-b border-gray-200 dark:border-gray-700">
+			{children}
+		</tr>
 	),
 	th: ({ children }) => (
-		<th className="border border-gray-300 px-3 py-2 text-left font-bold text-sm">
+		<th className="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left font-bold text-sm">
 			{children}
 		</th>
 	),
 	td: ({ children }) => (
-		<td className="border border-gray-300 px-3 py-2 text-sm">{children}</td>
+		<td className="border border-gray-300 dark:border-gray-600 px-3 py-2 text-sm">
+			{children}
+		</td>
 	),
 	code: ({ children, className }) => {
 		const isInline = !className?.includes("language-");
 		return isInline ? (
-			<code className="bg-gray-200 px-1 py-0.5 rounded text-xs sm:text-sm font-mono">
+			<code className="bg-gray-200 dark:bg-gray-700 px-1 py-0.5 rounded text-xs sm:text-sm font-mono">
 				{children}
 			</code>
 		) : (
-			<pre className="bg-gray-200 p-2 rounded text-xs sm:text-sm font-mono overflow-x-auto mb-2">
+			<pre className="bg-gray-200 dark:bg-gray-700 p-2 rounded text-xs sm:text-sm font-mono overflow-x-auto mb-2">
 				<code>{children}</code>
 			</pre>
 		);
 	},
 	blockquote: ({ children }) => (
-		<blockquote className="border-l-4 border-gray-300 pl-3 italic mb-2">
+		<blockquote className="border-l-4 border-gray-300 dark:border-gray-500 pl-3 italic mb-2">
 			{children}
 		</blockquote>
 	),
