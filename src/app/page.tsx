@@ -1,14 +1,17 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import ChatHeader from "@/components/ChatHeader";
-import MessageList from "@/components/MessageList";
-import ChatInput from "@/components/ChatInput";
 import { useTheme } from "@/context/ThemeContext";
+import {
+	ChatHeader,
+	ChatInput,
+	MessageList,
+	ThemeToggle,
+} from "@/ui/components";
 
 export default function Chat() {
 	const { messages, input, handleInputChange, handleSubmit, data } = useChat();
-	const { theme } = useTheme();
+	const { theme, toggleTheme } = useTheme();
 
 	return (
 		<div
@@ -20,7 +23,11 @@ export default function Chat() {
 		>
 			<div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
 				<div className="max-w-4xl mx-auto">
-					<ChatHeader />
+					<ChatHeader
+						rightElement={
+							<ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+						}
+					/>
 
 					{/* Chat Container */}
 					<div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden">

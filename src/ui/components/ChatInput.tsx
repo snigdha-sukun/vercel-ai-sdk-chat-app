@@ -1,19 +1,29 @@
-import { SendIcon } from "@/components/icons";
+import { SendIcon } from "../icons";
+import { cn } from "../utils/classNames";
 import type { FormEvent, ChangeEvent } from "react";
 
-interface ChatInputProps {
+export interface ChatInputProps {
 	readonly input: string;
 	readonly handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	readonly handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+	readonly className?: string;
+	readonly showHelpText?: boolean;
 }
 
-export default function ChatInput({
+export function ChatInput({
 	input,
 	handleInputChange,
 	handleSubmit,
+	className,
+	showHelpText = true,
 }: ChatInputProps) {
 	return (
-		<div className="border-t border-gray-200 dark:border-gray-700 p-3 sm:p-6 bg-gray-50 dark:bg-gray-800">
+		<div
+			className={cn(
+				"border-t border-gray-200 dark:border-gray-700 p-3 sm:p-6 bg-gray-50 dark:bg-gray-800",
+				className,
+			)}
+		>
 			<form
 				onSubmit={handleSubmit}
 				className="flex items-center space-x-2 sm:space-x-4"
@@ -34,12 +44,16 @@ export default function ChatInput({
 					</button>
 				</div>
 			</form>
-			<p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center hidden sm:block">
-				Press Enter to send • AI responses are generated in real-time
-			</p>
-			<p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center sm:hidden">
-				Tap to send
-			</p>
+			{showHelpText && (
+				<>
+					<p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center hidden sm:block">
+						Press Enter to send • AI responses are generated in real-time
+					</p>
+					<p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center sm:hidden">
+						Tap to send
+					</p>
+				</>
+			)}
 		</div>
 	);
 }

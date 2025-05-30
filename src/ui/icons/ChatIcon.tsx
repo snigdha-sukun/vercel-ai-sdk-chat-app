@@ -1,16 +1,19 @@
-interface IconProps {
-	className?: string;
-}
+import type { IconProps } from "./types";
 
-export default function ChatIcon({ className = "w-8 h-8" }: IconProps) {
+export function ChatIcon({
+	className = "w-8 h-8",
+	title = "Chat Icon",
+}: Readonly<IconProps>) {
 	return (
 		<svg
 			className={className}
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
+			role="img"
+			aria-labelledby="chatIconTitle"
 		>
-			<title>Chat Icon</title>
+			<title id="chatIconTitle">{title || "Chat Icon"}</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

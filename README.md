@@ -33,6 +33,7 @@ Users should be able to:
 - Real-time streaming responses using Google's Gemini model
 - Clean and responsive UI with Tailwind CSS
 - Markdown rendering for AI responses
+- Light and dark theme switching capability
 - Simple and intuitive chat interface
 
 ### How to Use the Chat Application
@@ -57,9 +58,10 @@ Users should be able to:
 
 - [Next.js](https://nextjs.org/) - React framework
 - [Vercel AI SDK](https://sdk.vercel.ai/docs) - AI integration toolkit
+- [Google Gemini](https://ai.google.dev/) - AI model provider
 - [React Markdown](https://github.com/remarkjs/react-markdown) - Markdown rendering
 - [Tailwind CSS](https://tailwindcss.com/) - For styles
-- [Google Gemini](https://ai.google.dev/) - AI model provider
+- [Storybook](https://storybook.js.org/) - For component development and documentation
 
 ### What I learned
 

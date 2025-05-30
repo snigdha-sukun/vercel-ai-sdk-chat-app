@@ -1,16 +1,19 @@
-interface IconProps {
-	className?: string;
-}
+import type { IconProps } from "./types";
 
-export default function SendIcon({ className = "w-4 h-4" }: IconProps) {
+export function SendIcon({
+	className = "w-4 h-4",
+	title = "Send Icon",
+}: Readonly<IconProps>) {
 	return (
 		<svg
 			className={className}
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
+			role="img"
+			aria-labelledby="sendIconTitle"
 		>
-			<title>Send Icon</title>
+			<title id="sendIconTitle">{title || "Send Icon"}</title>
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"
