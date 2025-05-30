@@ -10,9 +10,12 @@ import {
 } from "@/ui/components";
 
 export default function Chat() {
-	const { messages, input, handleInputChange, handleSubmit, isLoading, data } =
+	const { messages, input, handleInputChange, handleSubmit, status, data } =
 		useChat();
 	const { theme, toggleTheme } = useTheme();
+
+	// Determine loading state based on the status value
+	const isLoading = status === "streaming" || status === "submitted";
 
 	return (
 		<div

@@ -6,6 +6,7 @@ import {
 	SendIcon,
 	MoonIcon,
 	SunIcon,
+	CopyIcon,
 } from "../ui/icons";
 
 const meta = {
@@ -43,6 +44,18 @@ export const Sun: StoryObj<typeof SunIcon> = {
 	render: () => <SunIcon className="w-8 h-8 text-amber-500" />,
 };
 
+export const Copy: StoryObj<typeof CopyIcon> = {
+	render: () => <CopyIcon className="w-8 h-8 text-teal-500" />,
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"The Copy icon is used for the copy-to-clipboard functionality in messages. It appears when hovering over a message and allows users to copy the message content.",
+			},
+		},
+	},
+};
+
 // Display all icons together
 export const AllIcons: StoryObj<typeof ChatIcon> = {
 	render: () => (
@@ -53,6 +66,7 @@ export const AllIcons: StoryObj<typeof ChatIcon> = {
 			<SendIcon className="w-8 h-8" />
 			<MoonIcon className="w-8 h-8" />
 			<SunIcon className="w-8 h-8" />
+			<CopyIcon className="w-8 h-8" />
 		</div>
 	),
 };

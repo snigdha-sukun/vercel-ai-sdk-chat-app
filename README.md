@@ -33,6 +33,7 @@ Users should be able to:
 - Real-time streaming responses using Google's Gemini model
 - Clean and responsive UI with Tailwind CSS
 - Markdown rendering for AI responses
+- Copy-to-clipboard functionality for easy sharing of messages
 - Light and dark theme switching capability
 - Simple and intuitive chat interface
 

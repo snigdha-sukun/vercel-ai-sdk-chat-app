@@ -5,3 +5,4 @@ export * from "./UserIcon";
 export * from "./SendIcon";
 export * from "./MoonIcon";
 export * from "./SunIcon";
+export * from "./CopyIcon";
