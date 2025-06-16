@@ -28,7 +28,10 @@ export async function POST(req: NextRequest) {
 
 		return result.toDataStreamResponse();
 	} catch (error) {
-		console.error("Error in chat API:", error);
+		// Only log errors in non-test environments to reduce test noise
+		if (process.env.NODE_ENV !== 'test') {
+			console.error("Error in chat API:", error);
+		}
 
 		// More specific error handling
 		if (error instanceof SyntaxError) {

@@ -12,11 +12,29 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
+// Using flat config format with proper Next.js setup
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-  ...storybook.configs["flat/recommended"],
-  ...storybook.configs["flat/recommended"],
-  ...storybook.configs["flat/recommended"]
+  // Use compat to import traditional config
+  ...compat.extends("next/core-web-vitals"),
+
+  // Add Storybook rules manually for compatibility
+  {
+    files: ["**/*.stories.@(js|jsx|ts|tsx)"],
+    plugins: {
+      storybook
+    },
+    rules: {
+      "storybook/await-interactions": "error",
+      "storybook/context-in-play-function": "error",
+      "storybook/default-exports": "error",
+      "storybook/hierarchy-separator": "warn",
+      "storybook/no-redundant-story-name": "warn",
+      "storybook/prefer-pascal-case": "warn",
+      "storybook/story-exports": "error",
+      "storybook/use-storybook-expect": "error",
+      "storybook/use-storybook-testing-library": "error"
+    }
+  }
 ];
 
 export default eslintConfig;
